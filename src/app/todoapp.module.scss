@@ -1,0 +1,42 @@
+/* -------------------------------------------- */
+/*                   Todo App                   */
+/* -------------------------------------------- */
+
+.todo_wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.content_wrapper {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  width: calc(100% - 280px);
+}
+
+.todoContent {
+  width: 60%;
+  min-width: 350px;
+  position: relative;
+}
+
+.todoDetails {
+  overflow: hidden;
+  min-width: 300px;
+}
+
+.resize_handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  cursor: ew-resize;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -15px; /* Posuňte rukoväť tak, aby bola na okraji */
+  background-color: $border-color;
+}

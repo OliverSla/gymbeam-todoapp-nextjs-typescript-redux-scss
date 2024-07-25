@@ -1,0 +1,43 @@
+/* -------------------------------------------- */
+/*                 Todo Content                 */
+/* -------------------------------------------- */
+
+.todoContent_wrapper {
+  display: flex;
+  height: 100vh;
+  padding: 0px 2rem;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+/* -------------------------------------------- */
+/*                  todo header                 */
+/* -------------------------------------------- */
+
+.todoContent_header {
+  position: relative;
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.todoContent_header_text {
+  font-size: 1rem;
+  color: $text-color-primary;
+}
+
+.todoContent_header_darkmode_icon {
+  position: absolute;
+  right: 0;
+}
+
+/* -------------------------------------------- */
+/* -------------------------------------------- */
+
+/* -------------------------------------------- */
+/*               from add new todo              */
+/* -------------------------------------------- */

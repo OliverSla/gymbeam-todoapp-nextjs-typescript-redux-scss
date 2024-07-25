@@ -1,0 +1,132 @@
+
+/* -------------------------------------------- */
+/*                    Sidebar                   */
+/* -------------------------------------------- */
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 100vh;
+  background-color: $background-color;
+  border-right: $border-color;
+}
+
+/* -------------------------------------------- */
+/*                     logo                     */
+/* -------------------------------------------- */
+
+.logo_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  border-bottom: $border-color;
+  padding: 3.5rem;
+}
+
+.logo {
+  width: 160px;
+  height: 50px;
+  background-image: $logo;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* -------------------------------------------- */
+/*                 Sidebar items                */
+/* -------------------------------------------- */
+
+.sidebar_item_wrapper_first {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: $border-color;
+}
+
+.sidebar_item_wrapper {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: $border-color;
+}
+
+.sidebar_item_wrapper:hover {
+  cursor: pointer;
+  background-color: $background-color-hover;
+}
+
+/* -------------------------------------------- */
+/*                   Category                   */
+/* -------------------------------------------- */
+
+.category_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.category_items_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.category_item {
+  cursor: pointer;
+  box-sizing: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  color: $text-category-not-active;
+}
+
+.category_item_text {
+  flex: 1;
+  line-height: 150%;
+  font-size: 0.813rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  color: $text-category-not-active;
+}
+
+.active {
+  color: $text-color-primary;
+}
+
+.category_item:hover {
+  color: $text-category-hover;
+}
+
+.category_item_text:hover {
+  color: $text-category-hover;
+}
+
+.add_icon:hover {
+  cursor: pointer;
+  color: $text-category-hover;
+}
+
+/* -------------------------------------------- */
+/*                   Completed                  */
+/* -------------------------------------------- */
+
+.completed_container {
+  gap: 0.5rem;
+  display: flex;
+}
+
+/* -------------------------------------------- */
+/*                     Trash                    */
+/* -------------------------------------------- */
+
+.trash_container {
+  gap: 0.5rem;
+  display: flex;
+}
