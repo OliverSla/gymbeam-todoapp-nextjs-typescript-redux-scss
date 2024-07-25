@@ -10,7 +10,7 @@
   width: 280px;
   height: 100vh;
   background-color: $background-color;
-  border-right: $border-color;
+  border-right: $border;
 }
 
 /* -------------------------------------------- */
@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   height: 7rem;
-  border-bottom: $border-color;
+  border-bottom: $border;
   padding: 3.5rem;
 }
 
@@ -44,14 +44,14 @@
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  border-bottom: $border-color;
+  border-bottom: $border;
 }
 
 .sidebar_item_wrapper {
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  border-bottom: $border-color;
+  border-bottom: $border;
 }
 
 .sidebar_item_wrapper:hover {

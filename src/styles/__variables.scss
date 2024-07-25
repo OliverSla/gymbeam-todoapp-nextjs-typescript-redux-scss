@@ -11,8 +11,8 @@
 /*                     Fonts                    */
 /* -------------------------------------------- */
 
-$font-primary: "Inter", sans-serif,;
-$font-secondary: "Red hat Display", "Inter", 'arial', sans-serif;
+$font-primary: "Inter", sans-serif;
+$font-secondary: "Red hat Display", "Inter", "arial", sans-serif;
 
 /* -------------------------------------------- */
 /* -------------------------------------------- */
@@ -55,20 +55,56 @@ $blue-color-200: #b3b3ff;
 $blue-color-300: #8080ff;
 $blue-color-400: #4d4dff;
 $blue-color-500: #1a1aff;
-$blue-color-600: #000aff; // brand color
+$blue-color-600: #000aff;
 $blue-color-700: #0009e6;
 $blue-color-800: #0008cc;
 $blue-color-900: #0007b3;
+
+/* ---------------- Green colors --------------- */
+
+$green-color-100: #e6f9e6;
+$green-color-200: #ccf2cc;
+$green-color-300: #99e699;
+$green-color-400: #66d966;
+$green-color-500: #33cc33;
+$green-color-600: #00b300;
+$green-color-700: #009900;
+$green-color-800: #007f00;
+$green-color-900: #006600;
 
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 
 $background-color: $neutral-color-50-main;
 $background-color-hover: $neutral-color-200;
-$border-color: 1px solid $neutral-color-300;
+$border: 1px solid $neutral-color-300;
+$border-color: $neutral-color-300;
+$border-color-details-header: $neutral-color-700;
 $logo: url("/logo_light.png");
 
 /* ---------------- Typography ---------------- */
 $text-color-primary: $neutral-color-800;
 $text-category-not-active: $neutral-color-400;
 $text-category-hover: $neutral-color-600;
+
+/* --------------- Border radius -------------- */
+$border-rounded-sm: 0.25rem;
+
+/* ---------------- Forms ---------------- */
+$form-background: $neutral-color-100;
+$input-placeholder: $neutral-color-500;
+$form-submit-background: $neutral-color-200;
+$form-submit-background-hover: $neutral-color-300;
+
+/* ---------------- Todo list ---------------- */
+$todo-list-item-background: $neutral-color-200;
+$todo-list-item-background_checked: $neutral-color-100;
+$todo-list-item-color_checked: $neutral-color-400;
+
+/* ---------------- Priority ---------------- */
+$high-priority-color: $orange-color-600-main;
+$medium-priority-color: $green-color-600;
+$low-priority-color: $neutral-color-800;
+
+/* --------------- todo details --------------- */
+$text-color-details-description: $neutral-color-700;

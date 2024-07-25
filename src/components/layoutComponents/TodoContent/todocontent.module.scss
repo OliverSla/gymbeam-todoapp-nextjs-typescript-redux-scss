@@ -4,6 +4,7 @@
 
 .todoContent_wrapper {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   padding: 0px 2rem;
 }
@@ -41,3 +42,134 @@
 /* -------------------------------------------- */
 /*               from add new todo              */
 /* -------------------------------------------- */
+
+.todoContent_form {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  width: 100%;
+  background-color: $form-background;
+  height: 2.5rem;
+  border-radius: $border-rounded-sm;
+}
+
+.todoContent_form form {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.todoContent_input {
+  padding-left: 0.5rem;
+  width: 100%;
+  min-height: 40px;
+  background-color: $form-background;
+  border-radius: $border-rounded-sm;
+  color: $text-color-primary;
+}
+
+.todoContent_input::placeholder {
+  color: $input-placeholder;
+}
+
+.todoContent_form_icon {
+  flex-shrink: 0;
+  color: $input-placeholder;
+}
+
+.todoContent_form_submit {
+  cursor: pointer;
+  border-top-right-radius: $border-rounded-sm;
+  border-bottom-right-radius: $border-rounded-sm;
+  border-left: $border;
+  color: $text-color-primary;
+  height: 100%;
+  padding: 0 1rem;
+  background-color: $form-submit-background;
+}
+
+.todoContent_form_submit:hover {
+  background-color: $form-submit-background-hover;
+}
+
+/* -------------------------------------------- */
+/*                  Todos list                  */
+/* -------------------------------------------- */
+
+.todoContent_todos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: $border;
+}
+
+/* -------------------------------------------- */
+/*                   Todo list                  */
+/* -------------------------------------------- */
+
+.todoContent_list_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.todoContent_list_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  min-height: 3rem;
+  background-color: $todo-list-item-background;
+  border-radius: $border-rounded-sm;
+}
+
+.todoContent_list_item_checkbox {
+  display: flex;
+  flex-shrink: 0;
+  margin-right: 0.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.checked {
+  background-color: $todo-list-item-background_checked;
+  color: $todo-list-item-color_checked;
+}
+
+.todoContent_list_item_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoContent_list_item_right {
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag_icon_priority_high {
+  color: $high-priority-color;
+}
+
+.flag_icon_priority_medium {
+  color: $medium-priority-color;
+}
+
+.flag_icon_priority_low {
+  color: $low-priority-color;
+}

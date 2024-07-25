@@ -1,4 +1,3 @@
-
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 /*                 Globals scss                 */
@@ -8,27 +7,25 @@
 /* -------------------------------------------- */
 /* -------------------------------------------- */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: $font-primary;
-    color: $text-color-primary;
+body {
+  font-family: $font-primary;
+  color: $text-color-primary;
+}
+
+input {
+  border: none;
+  outline: none;
 }
 
 p {
-    font-family: $font-primary;
-    font-weight: 400;
-    color: $text-color-primary;
-    font-size: 0.875rem;
+  font-family: $font-primary;
+  font-weight: 400;
+  color: $text-color-primary;
+  font-size: 0.875rem;
 }
-
-
-
-
-
-
-
