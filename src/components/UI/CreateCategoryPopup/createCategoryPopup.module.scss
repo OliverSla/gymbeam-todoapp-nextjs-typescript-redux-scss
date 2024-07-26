@@ -1,0 +1,29 @@
+.popupContainer_form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.popupContainer_button {
+  background-color: $background-color;
+  border: none;
+  outline: none;
+}
+
+.popupContainer {
+    z-index: 99;
+    position: absolute;
+    left: 9rem;
+    top: 2rem;
+    width: fit-content;
+    padding: 1rem;
+    background-color: $background-color;
+    border-radius: $border-rounded-md;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.247);
+  }
+  
+  

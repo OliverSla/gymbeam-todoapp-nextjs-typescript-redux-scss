@@ -3,12 +3,16 @@
 /* -------------------------------------------- */
 
 .todo_details_wrapper {
-  height: 100vh;
+  position: relative;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   border-left: $border;
 }
 
 .todo_details_header {
+  flex-shrink: 0;
   width: 100%;
   height: 4rem;
   padding: 0px 2rem;
@@ -70,18 +74,61 @@
 .todo_details_content_wrapper {
   position: relative;
   display: flex;
-  min-height: 150px;
-  padding: 1.5rem 2rem;
+  min-height: fit-content;
+  padding: 0rem 2rem;
   flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 1rem;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
+.todo_details_content_wrapper::-webkit-scrollbar {
+  width: 1px;
+  height: 0;
+}
+
+.todo_details_content_wrapper::-webkit-scrollbar {
+  display: none; 
+}
+
+
+.todo_details_content_wrapper {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+
 .todo_details_content_title {
+  flex-shrink: 0;
   font-size: 1.25rem;
-  max-width: 80%;
+  max-width: 90%;
+  padding: 1.5rem 0rem;
 }
 
 .todo_details_content_description {
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
   padding-top: 1rem;
-  max-width: 60%;
+  max-width: 85%;
+  min-height: 5rem;
+  font-family: "Inter", sans-serif;
+  color: $text-color-details-description;
+  resize: none;
+  outline: none;
+}
+
+.todo_details_content_description::-webkit-scrollbar{
+  display: none;
+}
+
+.todo_details_content_description::placeholder {
+  font-family: "Inter", sans-serif;
   color: $text-color-details-description;
 }
