@@ -49,6 +49,17 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ todoId }) => {
     }
   };
 
+  const handleToggleCompleted = () => {
+    if (todo) {
+      dispatch(
+        updateTodoInCategory({
+          categoryId: todo.category,
+          todo: { ...todo, completed: !todo.completed },
+        })
+      );
+    }
+  };
+
   if (!todo) {
     return (
       <div className={styles.todo_details_wrapper}>
@@ -69,6 +80,7 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ todoId }) => {
             type="checkbox"
             size={24}
             checked={todo.completed}
+            onChange={handleToggleCompleted} // Added this line
           />
           <div className={styles.todo_details_header_divider}></div>
           <div className={styles.todo_details_header_calendar}>

@@ -17,7 +17,6 @@ import {
 } from "@/store/slices/categoriesSlice";
 import TodoOptions from "@/components/UI/TodoOptions/TodoOptions";
 import PriorityTodoOption from "@/components/UI/PriorityTodoOption/PriorityTodoOption";
-
 import { RiMenuUnfold2Line, RiMenuUnfoldLine } from "react-icons/ri";
 
 const TodoContent = ({
@@ -153,7 +152,6 @@ const TodoContent = ({
   const handleSaveEdit = (todoId: string) => {
     if (editingTodoText.trim() !== "") {
       const todo = selectedCategory?.todos.find((todo) => todo.id === todoId);
-      console.log("Edited todo:", todo); // Debug log
       if (todo) {
         dispatch(
           updateTodoInCategory({
@@ -182,6 +180,13 @@ const TodoContent = ({
     }
     setPriorityTodoId(null);
   };
+
+  const sortedTodos = selectedCategory?.todos.slice().sort((a, b) => {
+    if (a.completed === b.completed) {
+      return 0;
+    }
+    return a.completed ? 1 : -1;
+  });
 
   return (
     <div className={styles.todoContent_wrapper}>
@@ -234,7 +239,7 @@ const TodoContent = ({
       <div className={styles.todoContent_list_wrapper}>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
-        {selectedCategory?.todos.map((todo) => (
+        {sortedTodos?.map((todo) => (
           <div
             key={todo.id}
             className={classNames(styles.todoContent_list_item, {

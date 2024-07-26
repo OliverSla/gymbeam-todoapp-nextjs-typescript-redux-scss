@@ -167,8 +167,8 @@
 }
 
 .checked {
-  background-color: $todo-list-item-background_checked;
-  color: $todo-list-item-color_checked;
+  opacity: 0.5;
+  background-color: none;
 }
 
 .todoContent_list_item.active {
