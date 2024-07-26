@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styles from "./todoapp.module.scss";
 import useResizable from "../hooks/useResizable";
 import Sidebar from "@/components/layoutComponents/Sidebar/Sidebar";
@@ -10,16 +10,28 @@ import ReduxProvider from "@/store/Provider";
 
 const TodoApp = () => {
   const { contentRef, detailsRef, handleMouseDown } = useResizable();
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(
+    null
+  );
   const [selectedTodoId, setSelectedTodoId] = useState<string | null>(null);
+  const [openSidebar, setOpenSidebar] = useState(true);
 
   return (
     <ReduxProvider>
       <div className={styles.todo_wrapper}>
-        <Sidebar selectedCategoryId={selectedCategoryId} setSelectedCategoryId={setSelectedCategoryId} />
+        <Sidebar
+          openSidebar={openSidebar}
+          selectedCategoryId={selectedCategoryId}
+          setSelectedCategoryId={setSelectedCategoryId}
+        />
         <div className={styles.content_wrapper}>
           <div ref={contentRef} className={styles.todoContent}>
-            <TodoContent selectedCategoryId={selectedCategoryId} onSelectTodo={setSelectedTodoId} />
+            <TodoContent
+              setOpenSidebar={setOpenSidebar}
+              openSidebar={openSidebar}
+              selectedCategoryId={selectedCategoryId}
+              onSelectTodo={setSelectedTodoId}
+            />
             <div
               className={styles.resize_handle}
               onMouseDown={handleMouseDown}

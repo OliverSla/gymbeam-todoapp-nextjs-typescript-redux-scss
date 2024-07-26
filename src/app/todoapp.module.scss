@@ -40,3 +40,32 @@
   right: -15px; /* Posuňte rukoväť tak, aby bola na okraji */
   background-color: $border;
 }
+
+
+@media screen and (max-width: 1100px) {
+
+  .content_wrapper {
+    overflow-x:hidden ;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    width: calc(100% - 280px);
+    min-width: 350px;
+  }
+
+  .todoContent {
+    width: 100%;
+    min-width: 100px;
+    min-height: 60%;
+    position: relative;
+  }
+
+  .todoDetails {
+    border-top: $border;
+    width: 100%;
+    flex-grow: 1;
+    min-width: 100px;
+  }
+
+}

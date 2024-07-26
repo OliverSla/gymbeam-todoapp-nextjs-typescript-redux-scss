@@ -98,9 +98,10 @@ $form-submit-background: $neutral-color-200;
 $form-submit-background-hover: $neutral-color-300;
 
 /* ---------------- Todo list ---------------- */
-$todo-list-item-background: $neutral-color-200;
+$todo-list-item-background: $neutral-color-100;
 $todo-list-item-background_checked: $neutral-color-100;
 $todo-list-item-color_checked: $neutral-color-400;
+$todo-list-item-active-background: $neutral-color-300;;
 
 /* ---------------- Priority ---------------- */
 $high-priority-color: $orange-color-600-main;

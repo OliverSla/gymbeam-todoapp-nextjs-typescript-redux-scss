@@ -16,8 +16,8 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ todoId }) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const todo = categories
-    .flatMap(category => category.todos)
-    .find(todo => todo.id === todoId);
+    .flatMap((category) => category.todos)
+    .find((todo) => todo.id === todoId);
 
   useEffect(() => {
     if (todo) {
@@ -32,7 +32,9 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ todoId }) => {
     }
   }, [description]);
 
-  const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleDescriptionChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setDescription(e.target.value);
   };
 
@@ -48,7 +50,13 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ todoId }) => {
   };
 
   if (!todo) {
-    return <div className={styles.todo_details_wrapper}>Select a todo to view details</div>;
+    return (
+      <div className={styles.todo_details_wrapper}>
+        <p className={styles.todo_details_not_found}>
+          Select a todo to view details
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -70,15 +78,15 @@ const TodoDetails: React.FC<TodoDetailsProps> = ({ todoId }) => {
         </div>
         <div className={styles.todo_details_header_right}>
           <Flag size={24} />
-          <p>{todo.priority.charAt(0).toUpperCase() + todo.priority.slice(1)}</p>
+          <p>
+            {todo.priority.charAt(0).toUpperCase() + todo.priority.slice(1)}
+          </p>
         </div>
       </div>
 
       {/* Todo Details Content */}
       <div className={styles.todo_details_content_wrapper}>
-        <p className={styles.todo_details_content_title}>
-          {todo.title}
-        </p>
+        <p className={styles.todo_details_content_title}>{todo.title}</p>
         <textarea
           className={styles.todo_details_content_description}
           value={description}

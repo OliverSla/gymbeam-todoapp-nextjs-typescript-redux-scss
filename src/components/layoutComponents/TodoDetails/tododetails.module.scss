@@ -88,11 +88,6 @@
 }
 
 .todo_details_content_wrapper::-webkit-scrollbar {
-  width: 1px;
-  height: 0;
-}
-
-.todo_details_content_wrapper::-webkit-scrollbar {
   display: none; 
 }
 
@@ -115,7 +110,6 @@
   border: none;
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
   max-width: 85%;
   min-height: 5rem;
   font-family: "Inter", sans-serif;
@@ -131,4 +125,27 @@
 .todo_details_content_description::placeholder {
   font-family: "Inter", sans-serif;
   color: $text-color-details-description;
+}
+
+.todo_details_not_found{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+/* -------------------------------------------- */
+/*                 Responsivity                 */
+/* -------------------------------------------- */
+
+
+
+@media screen and (max-width: 1100px) {
+
+  .todo_details_wrapper {
+    border-left: none;
+  }
+
 }

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState, useRef, MouseEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,12 +18,18 @@ import {
 import TodoOptions from "@/components/UI/TodoOptions/TodoOptions";
 import PriorityTodoOption from "@/components/UI/PriorityTodoOption/PriorityTodoOption";
 
+import { RiMenuUnfold2Line, RiMenuUnfoldLine } from "react-icons/ri";
+
 const TodoContent = ({
   selectedCategoryId,
   onSelectTodo,
+  setOpenSidebar,
+  openSidebar,
 }: {
   selectedCategoryId: string | null;
   onSelectTodo: (todoId: string) => void;
+  setOpenSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+  openSidebar: boolean;
 }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { categories, loading, error } = useSelector(
@@ -38,6 +44,7 @@ const TodoContent = ({
     top: number;
     left: number;
   } | null>(null);
+  const [activeTodoId, setActiveTodoId] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -160,7 +167,10 @@ const TodoContent = ({
     }
   };
 
-  const handleChangePriority = (todoId: string, priority: 'high' | 'medium' | 'low') => {
+  const handleChangePriority = (
+    todoId: string,
+    priority: "high" | "medium" | "low"
+  ) => {
     const todo = selectedCategory?.todos.find((todo) => todo.id === todoId);
     if (todo) {
       dispatch(
@@ -177,6 +187,19 @@ const TodoContent = ({
     <div className={styles.todoContent_wrapper}>
       {/* Todo Content Header */}
       <div className={styles.todoContent_header}>
+        {openSidebar ? (
+          <RiMenuUnfold2Line
+            className={styles.menu_icon}
+            size={24}
+            onClick={() => setOpenSidebar(false)}
+          />
+        ) : (
+          <RiMenuUnfoldLine
+            className={styles.menu_icon}
+            size={24}
+            onClick={() => setOpenSidebar(true)}
+          />
+        )}
         <p className={styles.todoContent_header_text}>
           {selectedCategory?.name || "Select a category"}
         </p>
@@ -216,8 +239,12 @@ const TodoContent = ({
             key={todo.id}
             className={classNames(styles.todoContent_list_item, {
               [styles.checked]: todo.completed,
+              [styles.active]: todo.id === activeTodoId,
             })}
-            onClick={() => onSelectTodo(todo.id)}
+            onClick={() => {
+              onSelectTodo(todo.id);
+              setActiveTodoId(todo.id);
+            }}
           >
             <div className={styles.todoContent_list_item_left}>
               <input
@@ -279,7 +306,9 @@ const TodoContent = ({
               {priorityTodoId === todo.id && optionsPosition && (
                 <PriorityTodoOption
                   position={optionsPosition}
-                  onChangePriority={(priority) => handleChangePriority(todo.id, priority)}
+                  onChangePriority={(priority) =>
+                    handleChangePriority(todo.id, priority)
+                  }
                   onClose={() => setPriorityTodoId(null)}
                 />
               )}
