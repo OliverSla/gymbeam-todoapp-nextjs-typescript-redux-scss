@@ -5,6 +5,7 @@ Použité knižnice a frameworky
 - Appka beží na NextJS + App Router a /src 
 - Pre správu stavov používam Redux
 - Používam SCSS ako preprocessor CSS + používam styles.module systém pre lepšie manipulovanie so štýlami
+- Pre RestAPI používam axios library pre lepšie manipulovanie s HTTP requestami
 - Pre definovanie typov používam Typescript
 - Zdroj ikon - https://iconsax-react.pages.dev/  https://react-icons.github.io/react-icons/
 
