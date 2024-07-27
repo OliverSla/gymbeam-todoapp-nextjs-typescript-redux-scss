@@ -107,23 +107,6 @@ const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
 
-        {/* Completed button */}
-
-        <div className={styles.sidebar_item_wrapper}>
-          <div className={styles.completed_container}>
-            <MdDone size={18}></MdDone>
-            <p>Completed</p>
-          </div>
-        </div>
-
-        {/* Trash button */}
-
-        <div className={styles.sidebar_item_wrapper}>
-          <div className={styles.trash_container}>
-            <Trash size={18}></Trash>
-            <p>Trash</p>
-          </div>
-        </div>
       </aside>
     </>
   );
