@@ -29,15 +29,16 @@
 }
 
 .resize_handle {
+  z-index: 999999;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
+  width: 24px;
   cursor: ew-resize;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: -15px; /* Posuňte rukoväť tak, aby bola na okraji */
+  right: -10px; 
   background-color: $border;
 }
 
