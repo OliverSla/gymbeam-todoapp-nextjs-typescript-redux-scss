@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+ import { useRef, useCallback } from "react";
 
 const useResizable = () => {
   const contentRef = useRef<HTMLDivElement>(null);
